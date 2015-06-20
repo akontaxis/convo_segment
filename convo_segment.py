@@ -112,8 +112,6 @@ class ClusteredAudioMFCC:
                                 self.feature_numcep + self.feature_numcep**2))
 
     		for key in self.binned_model_params.keys():
-#    			print self.binned_model_params[key][0].shape
-#    			print self.binned_model_params[key][1].reshape(1,-1).shape
    			data_mat[key:] = np.concatenate([self.binned_model_params[key][0],  
                                              self.binned_model_params[key][1].reshape(1,-1)], 
                                              axis = 1)
@@ -200,7 +198,7 @@ def main():
                              'PC1': means_PCA, 
                              'label': labels})
         
-        p = ggplot(aes(x = 'time', y = 'mean_component1', color = 'label'), data = plot_df) + geom_point()
+        p = ggplot(aes(x = 'time', y = 'mean_component1', color = 'label'), data = plot_df) + geom_point() + xlab('time (s)') + ylab('Principal component 1') + ggtitle('Clustered speech for ' + filename)
         plot_filename = filename + '_plot.png'
         ggsave(p, plot_filename)
          
