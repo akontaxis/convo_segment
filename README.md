@@ -2,10 +2,7 @@
 A script for unsupervised labeling of changes of speaker in a (polite) conversation or interview. Works by clustering speech features (means of MFCCs over 1 second time windows) . Uses the python_speech_features module. 
 
 
-================
-Details
-================
-
+## Details
 
 Given a .wav recording of a conversation or interview between a small number of people, convo_segment tries to label when each participant is speaking. 
 
@@ -39,9 +36,7 @@ convo_segment is a simplified adaptation of this idea to the unsupervised settin
 
 
 
-================
-How to use:
-================
+## How to use:
 
 Put an audio file example.wav in the same directory as the convo_segment.py. If the number of speakers in example.wav is k, then run
 
@@ -53,9 +48,7 @@ The 'csv' option will write a .csv containing the cluster labels and the cepstra
 The 'plot' option will plot the M(i) against time. The y-axis is the first principal component of the M(i) over all time windows, the x-axis is time, and the colorign represent the cluster labels (speaker predictions) produced by convo_segment. 
 
 
-================
-Dependencies:
-================
+## Dependencies:
 
 scipy
 python_speech_features
